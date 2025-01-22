@@ -1,5 +1,7 @@
 package edu.badpals.ejercicio413;
 
+import edu.badpals.ejercicio413.model.repository.CustomerRepository;
+import edu.badpals.ejercicio413.model.entity.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

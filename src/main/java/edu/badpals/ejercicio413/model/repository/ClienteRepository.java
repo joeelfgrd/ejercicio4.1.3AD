@@ -1,5 +1,6 @@
-package edu.badpals.ejercicio413;
+package edu.badpals.ejercicio413.model.repository;
 
+import edu.badpals.ejercicio413.model.entity.Cliente;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

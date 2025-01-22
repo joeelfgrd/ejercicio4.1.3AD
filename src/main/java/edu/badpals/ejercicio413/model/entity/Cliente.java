@@ -1,4 +1,4 @@
-package edu.badpals.ejercicio413;
+package edu.badpals.ejercicio413.model.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
