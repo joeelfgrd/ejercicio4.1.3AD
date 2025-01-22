@@ -25,6 +25,9 @@ public class PeliculaController {
         Pelicula pelicula = peliculaRepository.findById(id).orElse(null);
         if (pelicula != null) {
             pelicula.setVotos(pelicula.getVotos() + 1);
+            if (pelicula.getVotos() >= 10) {
+                pelicula.setImagenUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-bxyUShUcDwTYQzl1z_KY0zxRhNuiQoBEizjh9cJgXJgxM3GRr-h5bErV8wrAUtCTmw&usqp=CAU");
+            }
             peliculaRepository.save(pelicula);
         }
         return "redirect:/peliculas";
