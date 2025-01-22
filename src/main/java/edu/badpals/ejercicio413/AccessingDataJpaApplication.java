@@ -1,7 +1,10 @@
 package edu.badpals.ejercicio413;
 
+import edu.badpals.ejercicio413.model.entity.Pelicula;
+import edu.badpals.ejercicio413.model.repository.ClienteRepository;
 import edu.badpals.ejercicio413.model.repository.CustomerRepository;
 import edu.badpals.ejercicio413.model.entity.Customer;
+import edu.badpals.ejercicio413.model.repository.PeliculaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +22,7 @@ public class AccessingDataJpaApplication {
   }
 
   @Bean
-  public CommandLineRunner demo(CustomerRepository repository) {
+  public CommandLineRunner demoCustomer(CustomerRepository repository) {
     return (args) -> {
       // save a few customers
       repository.save(new Customer("Jack", "Bauer"));
@@ -53,4 +56,27 @@ public class AccessingDataJpaApplication {
     };
   }
 
+  @Bean
+  public CommandLineRunner demoPelicula(PeliculaRepository peliculas) {
+    return (args) -> {
+      peliculas.save(new Pelicula("Avatar", "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Qzx9P3SPQhxUCGOuXLMbiIB7GleKqi.png", 0));
+      peliculas.save(new Pelicula("The Shawshank Redemption", "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Qzx9P3SPQhxUCGOuXLMbiIB7GleKqi.png", 0));
+      peliculas.save(new Pelicula("Pulp Fiction", "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Qzx9P3SPQhxUCGOuXLMbiIB7GleKqi.png", 0));
+
+
+      log.info("Peliculas found with findAll():");
+      log.info("-------------------------------");
+      peliculas.findAll().forEach(pelicula -> {
+        log.info(pelicula.toString());
+      });
+      log.info("");
+
+      Pelicula pelicula = peliculas.findById(1L);
+      log.info("Pelicula found with findById(1L):");
+      log.info("--------------------------------");
+      log.info(pelicula.toString());
+      log.info("");
+
+    };
+  }
 }
