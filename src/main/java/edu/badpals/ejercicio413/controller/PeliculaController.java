@@ -28,6 +28,10 @@ public class PeliculaController {
             if (pelicula.getVotos() >= 10) {
                 pelicula.setImagenUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs-bxyUShUcDwTYQzl1z_KY0zxRhNuiQoBEizjh9cJgXJgxM3GRr-h5bErV8wrAUtCTmw&usqp=CAU");
             }
+            if(pelicula.getVotos() >= 20){
+                pelicula.setImagenUrl("https://upload.wikimedia.org/wikipedia/commons/b/bf/Clown_chili_peppers.jpg");
+
+            }
             peliculaRepository.save(pelicula);
         }
         return "redirect:/peliculas";
