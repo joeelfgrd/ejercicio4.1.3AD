@@ -5,26 +5,26 @@
 </head>
 <body>
 <h1>Agregar Cliente</h1>
-<form th:object="${cliente}" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
-    <br>
+    <form th:object="${cliente}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
+        <br>
 
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" name="apellido" th:field="*{apellido}" required>
-    <br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" th:field="*{apellido}" required>
+        <br>
 
-    <label for="direccion">Dirección:</label>
-    <input type="text" id="direccion" name="direccion" th:field="*{direccion}" required>
-    <br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" th:field="*{direccion}" required>
+        <br>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="text" id="telefono" name="telefono" th:field="*{telefono}" required>
-    <br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" th:field="*{telefono}" required>
+        <br>
 
-    <button type="submit">Guardar</button>
-    <a href="/clientes/all"><button type="button">Ver Todos los Clientes</button></a>
+        <button type="submit">Guardar</button>
+        <a href="/clientes/all"><button type="button">Ver Todos los Clientes</button></a>
 
 </form>
-</body>
+    </body>
 </html>

@@ -30,7 +30,12 @@ public class PeliculaController {
             }
             if(pelicula.getVotos() >= 20){
                 pelicula.setImagenUrl("https://upload.wikimedia.org/wikipedia/commons/b/bf/Clown_chili_peppers.jpg");
-
+            }
+            if(pelicula.getVotos() >= 30){
+                pelicula.setImagenUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHuClBV4e6pBdktJPwCIa3u56AdGg_P1uHZw&s");
+            }
+            if(pelicula.getVotos() >= 40){
+                pelicula.setImagenUrl("https://www.plasticosur.com/images/thumbs/0065338_carn6274-nariz-payaso-grande-7cm-foam-6274.jpeg");
             }
             peliculaRepository.save(pelicula);
         }

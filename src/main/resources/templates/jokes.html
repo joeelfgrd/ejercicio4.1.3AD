@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke</title>
+</head>
+<body>
+<h1>Joke</h1>
+<div th:object="${Joke}">
+    <label for="id">Id:</label>
+    <label id="id" name="id" th:text="*{id}" required/>
+    <br>
+    <label>iconUrl:</label>
+    <img id="iconUrl" th:src="${Joke.getIcon_url()}"/>
+    <br>
+    <label for="url">url:</label>
+    <a id="url" th:href="url" th:text="*{url}" required/>
+    <br>
+    <label for="id">value:</label>
+    <label id="value" name="value" th:text="*{value}" required/>
+    <br>
+    <br>
+</div>
+</body>
+</html>

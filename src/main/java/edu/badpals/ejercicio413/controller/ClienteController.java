@@ -1,7 +1,7 @@
 package edu.badpals.ejercicio413.controller;
 
 import edu.badpals.ejercicio413.model.entity.Cliente;
-import edu.badpals.ejercicio413.model.repository.ClienteRepository;
+import edu.badpals.ejercicio413.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ClienteController {
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    private ClienteService clienteService;
+
+
     @GetMapping("/clientes")
     public String mostrarFormulario(Model model) {
         model.addAttribute("cliente", new Cliente());
@@ -22,14 +24,16 @@ public class ClienteController {
 
     @PostMapping("/clientes")
     public String saveCliente(@ModelAttribute Cliente cliente, Model model) {
-        clienteRepository.save(cliente);
+        ClienteService.guardarCliente(cliente);
         model.addAttribute("cliente", new Cliente());
         return "formulario_cliente";
     }
 
+
+
     @GetMapping("/clientes/all")
     public String mostrarClientes(Model model) {
-        model.addAttribute("clientes", clienteRepository.findAll());
+        model.addAttribute("clientes", clienteService.findAll());
         return "lista_clientes";
     }
 
